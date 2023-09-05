@@ -1,5 +1,8 @@
 <?xml version="1.0"?>
 <Project>
+	<PropertyGroup>
+		<PackageId>Samyne.$(AssemblyName)</PackageId>
+	</PropertyGroup>
 	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
 		<DocumentationFile>$(AssemblyName).xml</DocumentationFile>
 		<WarningsAsErrors>$(WarningsAsErrors);NU1605;CS1591;CS8618;CS8619</WarningsAsErrors>
