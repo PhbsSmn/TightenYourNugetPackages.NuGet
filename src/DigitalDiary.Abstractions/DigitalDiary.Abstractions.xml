@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>DigitalDiary.Abstractions</name>
+    </assembly>
+    <members>
+        <member name="T:DigitalDiary.IDigitalDiaryRepository">
+            <summary>
+            The digital diary repository interface
+            </summary>
+        </member>
+        <member name="P:DigitalDiary.IDigitalDiaryRepository.RepositoryProjectName">
+            <summary>
+            The memory repository project name
+            </summary>
+        </member>
+        <member name="M:DigitalDiary.IDigitalDiaryRepository.Write(System.String)">
+            <summary>
+            Writes a message to the digital diary
+            </summary>
+            <param name="message">The message</param>
+        </member>
+        <member name="M:DigitalDiary.IDigitalDiaryRepository.Read">
+            <summary>
+            Reads all the message from the digital diary repo
+            </summary>
+            <returns>An <see cref="T:System.Collections.Generic.IEnumerable`1"/></returns>
+        </member>
+    </members>
+</doc>

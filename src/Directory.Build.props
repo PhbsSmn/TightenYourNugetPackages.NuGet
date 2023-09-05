@@ -1,0 +1,34 @@
+<Project>
+	<Import Project="$([MSBuild]::GetPathOfFileAbove('Directory.Build.props', '$(MSBuildThisFileDirectory)../'))" />
+	<PropertyGroup>
+		<Company>ZF</Company>
+		<Authors>Pieter Samyn</Authors>
+		<Copyright>©ZF. All rights reserved.</Copyright>
+		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+
+		<!-- 02. Licensing -->
+		<PackageLicenseExpression>MIT</PackageLicenseExpression>
+
+		<!-- 03. Reproducible builds -->
+		<PublishRepositoryUrl>true</PublishRepositoryUrl>
+		<EmbedUntrackedSources>true</EmbedUntrackedSources>
+		<IncludeSymbols>true</IncludeSymbols>
+		<SymbolPackageFormat>snupkg</SymbolPackageFormat>
+		<DebugType>portable</DebugType>
+		<!-- When run on a CI/CD pipeline don't add this, it should be done for you -->
+		<ContinuousIntegrationBuild>true</ContinuousIntegrationBuild>
+	</PropertyGroup>
+
+
+	<!-- 03. Reproducible builds -->
+	<ItemGroup>
+		<PackageReference Include="DotNet.ReproducibleBuilds" Version="1.1.1">
+			<PrivateAssets>all</PrivateAssets>
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
+		<PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.1.1">
+			<PrivateAssets>all</PrivateAssets>
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
+	</ItemGroup>
+</Project>

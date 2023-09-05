@@ -1,0 +1,10 @@
+<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup>
+		<RootNamespace>DigitalDiary</RootNamespace>
+		<version>1.0.0</version>
+	</PropertyGroup>
+	<ItemGroup>
+	  <Folder Include="Interfaces\" />
+	  <Folder Include="Models\" />
+	</ItemGroup>
+</Project>
