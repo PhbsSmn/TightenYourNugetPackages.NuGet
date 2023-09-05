@@ -5,6 +5,7 @@
 		<Authors>Pieter Samyn</Authors>
 		<Copyright>©ZF. All rights reserved.</Copyright>
 		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+		<PackageReadmeFile>readme.md</PackageReadmeFile>
 
 		<!-- 02. Licensing -->
 		<PackageLicenseExpression>MIT</PackageLicenseExpression>
@@ -19,6 +20,9 @@
 		<ContinuousIntegrationBuild>true</ContinuousIntegrationBuild>
 	</PropertyGroup>
 
+	<ItemGroup>
+		<None Include="readme.md" Pack="true" PackagePath="\"/>
+	</ItemGroup>
 
 	<!-- 03. Reproducible builds -->
 	<ItemGroup>
