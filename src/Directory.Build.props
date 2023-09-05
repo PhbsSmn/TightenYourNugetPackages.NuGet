@@ -4,27 +4,29 @@
 		<Company>ZF</Company>
 		<Authors>Pieter Samyn</Authors>
 		<Copyright>©ZF. All rights reserved.</Copyright>
-		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
 		<PackageReadmeFile>readme.md</PackageReadmeFile>
 
 		<!-- 02. Licensing -->
 		<PackageLicenseExpression>MIT</PackageLicenseExpression>
 
-		<!-- 03. Reproducible builds -->
+		<!-- 03. Reproducible builds --><!--
+		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
 		<PublishRepositoryUrl>true</PublishRepositoryUrl>
 		<EmbedUntrackedSources>true</EmbedUntrackedSources>
 		<IncludeSymbols>true</IncludeSymbols>
 		<SymbolPackageFormat>snupkg</SymbolPackageFormat>
 		<DebugType>portable</DebugType>
-		<!-- When run on a CI/CD pipeline don't add this, it should be done for you -->
-		<ContinuousIntegrationBuild>true</ContinuousIntegrationBuild>
+		-->
+
+		<!-- When run on a CI/CD pipeline don't add this, it should be done for you --><!--
+		<ContinuousIntegrationBuild>true</ContinuousIntegrationBuild>-->
 	</PropertyGroup>
 
 	<ItemGroup>
 		<None Include="readme.md" Pack="true" PackagePath="\"/>
 	</ItemGroup>
 
-	<!-- 03. Reproducible builds -->
+	<!-- 03. Reproducible builds --><!--
 	<ItemGroup>
 		<PackageReference Include="DotNet.ReproducibleBuilds" Version="1.1.1">
 			<PrivateAssets>all</PrivateAssets>
@@ -34,5 +36,5 @@
 			<PrivateAssets>all</PrivateAssets>
 			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
 		</PackageReference>
-	</ItemGroup>
+	</ItemGroup>-->
 </Project>
