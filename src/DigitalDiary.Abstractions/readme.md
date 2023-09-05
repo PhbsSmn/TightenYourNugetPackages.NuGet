@@ -1,2 +1,2 @@
 ﻿# DigitalDiary.Abstractions
-An abstract package for implementing the digital diary
+This is a demo nuget package and holds an abstract package for implementing the digital diary

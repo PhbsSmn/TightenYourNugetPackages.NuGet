@@ -1,7 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
-	<PropertyGroup>
-		<version>1.0.0</version>
-	</PropertyGroup>
+﻿<Project Sdk="Microsoft.NET.Sdk">
 	<ItemGroup>
 		<PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="7.*" />
 	</ItemGroup>
