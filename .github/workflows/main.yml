@@ -2,27 +2,28 @@ name: CI
 
 on:
   create:
-    branches: 
+    branches:
       - release/**
   push:
     branches:
     - main
+    - release/**
   pull_request:
-    branches: 
+    branches:
     - main
 
 jobs:
   build:
-  
+
     env:
       BUILD_CONFIG: 'Release'
       SOLUTION: 'TightenYourNugetPackages.NuGet.sln'
-      
+
     runs-on: ubuntu-latest
 
     steps:
     - uses: actions/checkout@v2
-    
+
     - name: Get Build Version
       run: |
         Import-Module .\build\GetBuildVersion.psm1
