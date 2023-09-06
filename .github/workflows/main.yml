@@ -49,7 +49,7 @@ jobs:
           7.x
 
     - name: Build
-      run: dotnet build $SOLUTION --configuration $BUILD_CONFIG --no-restore -p:"VersionPrefix=$version"
+      run: dotnet build $SOLUTION --configuration $BUILD_CONFIG --no-restore
 
     # - name: Publish
     #   if: startsWith(github.ref, 'refs/heads/release')
