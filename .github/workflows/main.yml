@@ -50,13 +50,14 @@ jobs:
     - name: Build
       run: dotnet build $SOLUTION --configuration $BUILD_CONFIG --no-restore -p:"VersionPrefix=$BUILD_VERSION"
       
-    # - name: Upload artifacts
-    #   uses: actions/upload-artifact@v3
-    #   with:
-    #     name: packages
-    #     path: |
-    #       **/*.nupkg
-    #       **/*.snupkg
+    - name: Upload artifacts
+      if: startsWith(github.ref, 'refs/heads/main')
+      uses: actions/upload-artifact@v3
+      with:
+        name: packages
+        path: |
+          **/*.nupkg
+          **/*.snupkg
 
     - name: Publish
       if: startsWith(github.ref, 'refs/heads/release')
