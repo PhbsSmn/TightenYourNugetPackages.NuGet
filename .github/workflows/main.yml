@@ -21,7 +21,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3
 
     - name: Get Build Version
       run: |
@@ -36,7 +36,7 @@ jobs:
       run: |
         dotnet add package Microsoft.SourceLink.GitHub
         dotnet add package DotNet.ReproducibleBuilds
-      working-directory: src
+      working-directory: .\src
     
     - name: Setup NuGet
       uses: NuGet/setup-nuget@v1
