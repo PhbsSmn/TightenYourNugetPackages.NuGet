@@ -43,6 +43,9 @@ jobs:
           dotnet add package Microsoft.SourceLink.GitHub $project
           dotnet add package DotNet.ReproducibleBuilds $project
         done
+
+        git config --global user.email "you@example.com"
+        git config --global user.name "Your Name"
         git commit -a -m "update project(s)"
     
     - name: Restore dependencies
