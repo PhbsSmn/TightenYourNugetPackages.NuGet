@@ -36,7 +36,7 @@ jobs:
       run: |
         dotnet add package Microsoft.SourceLink.GitHub
         dotnet add package DotNet.ReproducibleBuilds
-      working-directory: .\src
+      working-directory: ./src/
     
     - name: Setup NuGet
       uses: NuGet/setup-nuget@v1
