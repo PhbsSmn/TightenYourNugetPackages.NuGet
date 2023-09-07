@@ -32,6 +32,11 @@ jobs:
         Write-Host $version
       shell: pwsh
 
+    - name: Setup NuGet
+      uses: NuGet/setup-nuget@v1
+      with:
+        nuget-version: 'latest'
+
     - name: Add packages to src projects
       run: |
         for project in $(find . -name 'src/*.csproj'); do
@@ -39,11 +44,6 @@ jobs:
           dotnet add package DotNet.ReproducibleBuilds $project
         done
     
-    - name: Setup NuGet
-      uses: NuGet/setup-nuget@v1
-      with:
-        nuget-version: 'latest'
-
     - name: Restore dependencies
       run: nuget restore $SOLUTION
 
