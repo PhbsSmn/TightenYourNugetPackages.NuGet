@@ -40,13 +40,16 @@ jobs:
     - name: Add packages to src projects
       run: |
         for project in $(find . -name 'src/*.csproj'); do
+          echo "::set-env name=FILE_CONTENT::$(cat $project)"
           dotnet add package Microsoft.SourceLink.GitHub $project
           dotnet add package DotNet.ReproducibleBuilds $project
+          echo "::set-env name=FILE_CONTENT::$(cat $project)"
         done
 
         git config --global user.email "you@example.com"
         git config --global user.name "Your Name"
         git commit -a -m "update project(s)"
+        git push
     
     - name: Restore dependencies
       run: nuget restore $SOLUTION
