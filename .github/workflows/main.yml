@@ -43,6 +43,7 @@ jobs:
           dotnet add package Microsoft.SourceLink.GitHub $project
           dotnet add package DotNet.ReproducibleBuilds $project
         done
+        git commit -a -m "update project(s)"
     
     - name: Restore dependencies
       run: nuget restore $SOLUTION
