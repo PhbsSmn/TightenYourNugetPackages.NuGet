@@ -39,12 +39,10 @@ jobs:
 
     - name: Add packages to src projects
       run: |
-        dotnet add package Microsoft.SourceLink.GitHub /home/runner/work/TightenYourNugetPackages.NuGet/TightenYourNugetPackages.NuGet/src/DigitalDiary.Abstractions/DigitalDiary.Abstractions.csproj
-        dotnet add package DotNet.ReproducibleBuilds /home/runner/work/TightenYourNugetPackages.NuGet/TightenYourNugetPackages.NuGet/src/DigitalDiary.Abstractions/DigitalDiary.Abstractions.csproj
-
-        git config --global user.email "you@example.com"
-        git config --global user.name "Your Name"
-        git commit -a -m "update project(s)"
+        for project in $(find . -name 'src/*.csproj'); do
+          dotnet add  $project package Microsoft.SourceLink.GitHub
+          dotnet add  $project package DotNet.ReproducibleBuilds
+        done
     
     - name: Restore dependencies
       run: nuget restore $SOLUTION
