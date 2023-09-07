@@ -32,6 +32,12 @@ jobs:
         Write-Host $version
       shell: pwsh
 
+    - name: Add packages to src projects
+      run: |
+        dotnet add package Microsoft.SourceLink.GitHub
+        dotnet add package DotNet.ReproducibleBuilds
+      working-directory: src
+    
     - name: Setup NuGet
       uses: NuGet/setup-nuget@v1
       with:
