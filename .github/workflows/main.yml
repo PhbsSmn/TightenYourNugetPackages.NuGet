@@ -40,8 +40,8 @@ jobs:
     - name: Add packages to src projects
       run: |
         for project in $(find . -name 'src/*.csproj'); do
-          dotnet add  $project package Microsoft.SourceLink.GitHub
-          dotnet add  $project package DotNet.ReproducibleBuilds
+          dotnet add $project package Microsoft.SourceLink.GitHub
+          dotnet add $project package DotNet.ReproducibleBuilds
         done
     
     - name: Restore dependencies
