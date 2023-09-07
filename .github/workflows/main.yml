@@ -40,9 +40,13 @@ jobs:
     - name: Add packages to src projects
       run: |
         for project in $(find . -name 'src/*.csproj'); do
+          echo $project
           dotnet add $project package Microsoft.SourceLink.GitHub
           dotnet add $project package DotNet.ReproducibleBuilds
         done
+        
+        dotnet add src/DigitalDiary.Abstractions/DigitalDiary.Abstractions.csproj package Microsoft.SourceLink.GitHub
+        dotnet add src/DigitalDiary.Abstractions/DigitalDiary.Abstractions.csproj package DotNet.ReproducibleBuilds
     
     - name: Restore dependencies
       run: nuget restore $SOLUTION
