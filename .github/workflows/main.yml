@@ -34,9 +34,12 @@ jobs:
 
     - name: Add packages to src projects
       run: |
-        dotnet add package Microsoft.SourceLink.GitHub
-        dotnet add package DotNet.ReproducibleBuilds
-      working-directory: ./src/
+        for project in $(find . -name '*.csproj'); do
+          dotnet add package Microsoft.SourceLink.GitHub $project
+          dotnet add package DotNet.ReproducibleBuilds $project
+        done
+      working-directory: src
+    
     
     - name: Setup NuGet
       uses: NuGet/setup-nuget@v1
