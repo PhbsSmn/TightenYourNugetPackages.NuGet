@@ -39,8 +39,8 @@ jobs:
 
     - name: Add packages to src projects
       run: |
-        dotnet add package Microsoft.SourceLink.GitHub ./src/DigitalDiary.Abstractions/DigitalDiary.Abstractions.csproj
-        dotnet add package DotNet.ReproducibleBuilds ./src/DigitalDiary.Abstractions/DigitalDiary.Abstractions.csproj
+        dotnet add package Microsoft.SourceLink.GitHub  /home/runner/work/TightenYourNugetPackages.NuGet/TightenYourNugetPackages.NuGet/src/DigitalDiary.Abstractions/DigitalDiary.Abstractions.csproj
+        dotnet add package DotNet.ReproducibleBuilds  /home/runner/work/TightenYourNugetPackages.NuGet/TightenYourNugetPackages.NuGet/src/DigitalDiary.Abstractions/DigitalDiary.Abstractions.csproj
 
         git config --global user.email "you@example.com"
         git config --global user.name "Your Name"
