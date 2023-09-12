@@ -21,7 +21,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v2
 
     - name: Get Build Version
       run: |
@@ -37,17 +37,6 @@ jobs:
       with:
         nuget-version: 'latest'
 
-    - name: Add packages to src projects
-      run: |
-        for project in $(find . -name 'src/*.csproj'); do
-          echo $project
-          dotnet add $project package Microsoft.SourceLink.GitHub
-          dotnet add $project package DotNet.ReproducibleBuilds
-        done
-        
-        dotnet add src/DigitalDiary.Abstractions/DigitalDiary.Abstractions.csproj package Microsoft.SourceLink.GitHub
-        dotnet add src/DigitalDiary.Abstractions/DigitalDiary.Abstractions.csproj package DotNet.ReproducibleBuilds
-    
     - name: Restore dependencies
       run: nuget restore $SOLUTION
 
@@ -60,7 +49,7 @@ jobs:
 
     - name: Build
       run: dotnet build $SOLUTION --configuration $BUILD_CONFIG --no-restore -p:"VersionPrefix=$BUILD_VERSION"
-      
+
     - name: Upload artifacts
       if: startsWith(github.ref, 'refs/heads/main')
       uses: actions/upload-artifact@v3
