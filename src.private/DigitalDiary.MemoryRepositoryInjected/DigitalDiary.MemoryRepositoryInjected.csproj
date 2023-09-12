@@ -1,8 +1,9 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
 		<AssemblyName>DigitalDiary.MemoryRepository</AssemblyName>
 		<RootNamespace>DigitalDiary.MemoryRepository</RootNamespace>
+		<PackageId>Samyne.DigitalDiary.MemoryRepository</PackageId>
 
 		<Authors>Pieter Samyn</Authors>
 		<Copyright>©All rights reserved.</Copyright>
@@ -11,12 +12,15 @@
 		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
 		<Version>1.5.0</Version>
 
-		<OutputType>Library</OutputType>
-		<IsPackable>true</IsPackable>
 	</PropertyGroup>
 
 	<ItemGroup>
 	  <PackageReference Include="Samyne.DigitalDiary.Abstractions" Version="1.0.1" />
+	  <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="7.*" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\DigitalDiary.MemoryRepositoryInjected.AspNetCore\DigitalDiary.MemoryRepositoryInjected.AspNetCore.csproj" />
 	</ItemGroup>
 
 	<ItemGroup>

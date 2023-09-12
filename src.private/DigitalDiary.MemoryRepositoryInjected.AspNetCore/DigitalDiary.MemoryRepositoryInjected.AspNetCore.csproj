@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+	  <AssemblyName>DigitalDiary.MemoryRepository.AspNetCore</AssemblyName>
+	  <RootNamespace>DigitalDiary.MemoryRepository.AspNetCore</RootNamespace>
+	  <PackageId>Samyne.DigitalDiary.MemoryRepository</PackageId>
+
+	  <Authors>Pieter Samyn</Authors>
+	  <Copyright>©All rights reserved.</Copyright>
+	  <PackageLicenseExpression>MIT</PackageLicenseExpression>
+	  <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+
+	  <OutputType>Library</OutputType>
+	  <IsPackable>true</IsPackable>
+  </PropertyGroup>
+
+</Project>
